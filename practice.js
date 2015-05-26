@@ -298,14 +298,28 @@ var MakeCard = function(type, ccnum, expr, ccv) {
   //Code Here
 var bindCard = function(Person, Card) {
   return newObj = {
-    Person: Person,
-    Card: Card
+    Person: MakePerson,
+    Card: MakeCard
   }
 }
 
 bindCard(MakePerson('mikel', 'jan20', 34234234234), MakeCard('AmEx', 23094823094823904, 'jan 16', 332))
 
 console.log(newObj.Person, newObj.Card);
+
+
+// Mentor answer
+var merge = function(person, card) {
+  return {
+    name: person['name'],
+    birthday: person['birthday'],
+    ssn: person['ssn'],
+    type: card['type'],
+    ccnum: card['ccnum'],
+    expr: card['expr'],
+    ccv: card['ccv']
+  }
+}
 
 
 
